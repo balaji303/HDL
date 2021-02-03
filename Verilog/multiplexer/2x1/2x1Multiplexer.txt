@@ -1,0 +1,9 @@
+/*2:1 MUX */
+
+module mux2(output z, input i0,i1,sel);
+	wire nsel,a0,a1;
+	not(nsel,sel);  //premitive(output,input1)
+	and A0(a0,nsel,i0);
+	and A1(a1,sel,i1);
+	or O(z,a1,a0);
+endmodule
