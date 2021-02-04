@@ -1,0 +1,19 @@
+/*
+Call by reference
+*/
+//2-to-1 multiplexer
+module mux2(output z, input i0,i1,sel);
+	wire nsel,a0,a1;
+	not(nsel,sel);  //premitive(output,input1)
+	and A0(a0,nsel,i0);
+	and A1(a1,sel,i1);
+	or O(z,a1,a0);
+endmodule
+
+//4-to-1 multiplexer
+module mux4(input d0,d1,d2,d3, input [1:0]sel, output z );
+	wire z1,z2;
+	mux2 m1(.sel(sel[0]),.i0(d0),.i1(d1),.z(z1));
+	mux2 m2(.sel(sel[0]),.i0(d2),.i1(d3),.z(z2));
+	mux2 m3(.sel(sel[1]),.i0(z1),.i1(z2),.z(z))
+endmodule
