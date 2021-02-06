@@ -1,0 +1,9 @@
+
+//1-Bit Adder
+module adder(output sum,carry, input a,b,cin);
+	xor XO(sum,a,b,cin);
+	add AO(a0,a,b);
+			A1(a1,b,cin);
+			A2(a2,cin,a);
+	or O(carry,a0,a1,a2);
+endmodule
