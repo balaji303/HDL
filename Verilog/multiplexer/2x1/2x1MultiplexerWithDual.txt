@@ -1,0 +1,7 @@
+//2 to 1 multiplier with dual polarity output
+module mux2(
+	input i0,i1,sel,
+	output z,zbar);
+	assign z=sel ? i1:i0;
+	assign zbar=~z;
+endmodule
