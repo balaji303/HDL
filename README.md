@@ -1,2 +1,2 @@
 # HDL
-Hardware Description Language
+Hardware Description Language is used here in this repo 
